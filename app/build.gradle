@@ -1,0 +1,53 @@
+
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'java'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    testImplementation 'junit:junit:4.+'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.0'
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation group: 'org.json', name: 'json', version: '20230227'
+// https://mvnrepository.com/artifact/io.rest-assured/rest-assured-common
+    implementation group: 'io.rest-assured', name: 'rest-assured-common', version: '5.3.0'
+    // https://mvnrepository.com/artifact/io.rest-assured/json-path
+    testImplementation group: 'io.rest-assured', name: 'json-path', version: '5.3.0'
+// https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
+    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.17', ext: 'pom'
+    implementation group: 'org.json', name: 'json', version: '20230227'
+// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.3'
+
+
+
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+
+
+
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
