@@ -1,4 +1,4 @@
-package com.gorest;
+package com.gorest.test.utils;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.gorest.dominio;
+package com.gorest.test.dominio;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
